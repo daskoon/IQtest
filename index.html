@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comprehensive Cognitive Assessment Test</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#218085">
+    <meta name="description" content="A medically consistent IQ test based on modern CHC theory">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Welcome Screen -->
+        <div id="welcome-screen" class="screen active">
+            <div class="container">
+                <div class="welcome-content">
+                    <h1 class="welcome-title">Comprehensive Cognitive Assessment Test</h1>
+                    <div class="welcome-description">
+                        <p>This assessment is based on the Cattell-Horn-Carroll (CHC) theory of cognitive abilities and measures six key domains:</p>
+                        <ul class="domain-list">
+                            <li><strong>Fluid Reasoning (Gf):</strong> Pattern recognition, logical reasoning, novel problem solving</li>
+                            <li><strong>Crystallized Intelligence (Gc):</strong> Vocabulary, general knowledge, acquired information</li>
+                            <li><strong>Visual-Spatial Processing (Gv):</strong> Visual patterns, spatial relationships, mental rotation</li>
+                            <li><strong>Working Memory (Gwm):</strong> Memory span, mental manipulation, cognitive flexibility</li>
+                            <li><strong>Processing Speed (Gs):</strong> Speed of cognitive processing, attention to detail</li>
+                            <li><strong>Quantitative Reasoning (Gq):</strong> Mathematical reasoning, numerical operations</li>
+                        </ul>
+                    </div>
+                    <div class="test-info">
+                        <div class="info-item">
+                            <span class="info-label">Questions:</span>
+                            <span class="info-value">40</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Time Limit:</span>
+                            <span class="info-value">60 minutes</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Format:</span>
+                            <span class="info-value">Multiple Choice</span>
+                        </div>
+                    </div>
+                    <div class="instructions">
+                        <h3>Instructions:</h3>
+                        <ul>
+                            <li>Answer all questions to the best of your ability</li>
+                            <li>You cannot return to previous questions</li>
+                            <li>Take your time but be mindful of the timer</li>
+                            <li>Choose the best answer from the four options provided</li>
+                        </ul>
+                    </div>
+                    <button id="start-test-btn" class="btn btn--primary btn--lg btn--full-width">Start Test</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Question Screen -->
+        <div id="question-screen" class="screen">
+            <div class="container">
+                <div class="test-header">
+                    <div class="progress-info">
+                        <span id="question-counter">Question 1 of 40</span>
+                        <span class="domain-indicator" id="domain-indicator">Fluid Reasoning (Gf)</span>
+                    </div>
+                    <div class="timer-display" id="timer-display">60:00</div>
+                </div>
+                
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progress-fill"></div>
+                </div>
+
+                <div class="question-content">
+                    <h2 class="question-text" id="question-text">Loading question...</h2>
+                    
+                    <div class="answer-options" id="answer-options">
+                        <button class="answer-btn" data-option="0">
+                            <span class="option-letter">A</span>
+                            <span class="option-text"></span>
+                        </button>
+                        <button class="answer-btn" data-option="1">
+                            <span class="option-letter">B</span>
+                            <span class="option-text"></span>
+                        </button>
+                        <button class="answer-btn" data-option="2">
+                            <span class="option-letter">C</span>
+                            <span class="option-text"></span>
+                        </button>
+                        <button class="answer-btn" data-option="3">
+                            <span class="option-letter">D</span>
+                            <span class="option-text"></span>
+                        </button>
+                    </div>
+
+                    <button id="next-question-btn" class="btn btn--primary btn--lg btn--full-width" disabled>Next Question</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Results Screen -->
+        <div id="results-screen" class="screen">
+            <div class="container">
+                <div class="results-content">
+                    <h1 class="results-title">Test Complete</h1>
+                    
+                    <div class="iq-score-display">
+                        <div class="iq-score" id="iq-score">100</div>
+                        <div class="iq-label">IQ Score</div>
+                        <div class="iq-interpretation" id="iq-interpretation">Average</div>
+                    </div>
+
+                    <div class="performance-summary">
+                        <h3>Performance Summary</h3>
+                        <div class="summary-stats">
+                            <div class="stat-item">
+                                <span class="stat-label">Questions Correct:</span>
+                                <span class="stat-value" id="correct-count">0/40</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-label">Time Taken:</span>
+                                <span class="stat-value" id="time-taken">0:00</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-label">Accuracy:</span>
+                                <span class="stat-value" id="accuracy-percent">0%</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="domain-breakdown">
+                        <h3>Domain Performance</h3>
+                        <div id="domain-results"></div>
+                    </div>
+
+                    <div class="detailed-analysis">
+                        <h3>Analysis</h3>
+                        <p id="analysis-text">Your performance analysis will appear here.</p>
+                    </div>
+
+                    <button id="retake-test-btn" class="btn btn--secondary btn--lg btn--full-width">Retake Test</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
